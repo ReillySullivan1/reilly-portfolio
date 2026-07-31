@@ -164,7 +164,7 @@ a { color: inherit; text-decoration: none; }
 .case-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: clamp(48px, 9vw, 149px) clamp(40px, 9vw, 149px);
+  gap: clamp(28px, 4vw, 56px);
   padding-bottom: clamp(90px, 16vw, 220px);
 }
 .case {
@@ -174,11 +174,14 @@ a { color: inherit; text-decoration: none; }
 }
 .case-thumb {
   position: relative;
-  aspect-ratio: 450 / 400;
-  background: var(--placeholder);
+  aspect-ratio: 450 / 360;
+  background: linear-gradient(155deg, var(--surface) 0%, var(--panel) 100%);
   border-radius: var(--radius-card);
   width: 100%;
   overflow: hidden;
+  /* "Inside" shadow: a soft inward vignette that gives the tile itself
+     some depth, rather than a flat placeholder-grey rectangle. */
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -28px 40px -24px rgba(20, 20, 20, 0.16);
 }
 .case-thumb img {
   width: 100%;
