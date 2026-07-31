@@ -205,8 +205,8 @@ a { color: inherit; text-decoration: none; }
 }
 .case-title {
   font-weight: 400;
-  font-size: clamp(28px, 3.4vw, 36px);
-  line-height: 1.2;
+  font-size: clamp(20px, 2.2vw, 24px);
+  line-height: 1.25;
   margin: 0;
 }
 .case-tags {
@@ -227,8 +227,8 @@ a { color: inherit; text-decoration: none; }
 }
 .case-body {
   color: var(--muted);
-  font-size: clamp(17px, 1.5vw, 20px);
-  line-height: 27px;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.6;
   margin: 0;
   max-width: 46ch;
 }
@@ -413,12 +413,30 @@ footer {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
-  .hero { flex-direction: column; align-items: flex-start; }
-  .hero-text { max-width: none; }
+  .hero { flex-direction: column; align-items: center; }
+  .hero-text { max-width: none; text-align: center; }
   .case-grid { grid-template-columns: 1fr; }
   .bio { flex-direction: column; }
   .bio-text { max-width: none; }
   .edu-skills { grid-template-columns: 1fr; }
+
+  /* Nav pill starts hidden and reveals on the visitor's first scroll (see
+     app.js). visibility (not display) keeps its layout space reserved, so
+     nothing shifts when it fades in, and keeps it out of the tab order
+     while hidden. */
+  .nav-shell {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s ease;
+  }
+  .nav-shell.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 860px) and (prefers-reduced-motion: reduce) {
+  .nav-shell { transition: none; }
 }
 
 @media (max-width: 560px) {
@@ -665,6 +683,11 @@ footer {
 
 /* Transportation case study tweaks */
 .cs-next { display: flex; flex-direction: column; gap: clamp(28px, 4vw, 48px); }
+
+/* "Next Project" link, bottom of every case study — reuses .case-link/
+   .case-thumb/.case-title from the homepage grid for a consistent hover
+   (lift, thumb zoom, underline), just narrower than a full grid column. */
+.cs-next-project { max-width: 380px; }
 
 /* Problem & Approach read as full-width copy instead of the capped measure */
 section[aria-labelledby="problem-h"] .cs-text,

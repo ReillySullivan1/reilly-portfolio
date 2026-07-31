@@ -26,6 +26,26 @@
 })();
 
 (function () {
+  // Mobile: nav pill stays hidden (see the CSS media query in styles.css)
+  // until the visitor's first interaction, then reveals permanently. No-op
+  // on desktop widths, since the CSS there never hides it in the first
+  // place. Listens for touchstart as well as scroll — a tap that doesn't
+  // happen to produce a native scroll event (e.g. a short page, or a tap
+  // before any scrolling) would otherwise leave the nav stuck hidden.
+  var navShell = document.querySelector('.nav-shell');
+  if (!navShell) return;
+  var reveal = function () {
+    navShell.classList.add('is-visible');
+    window.removeEventListener('scroll', reveal);
+    window.removeEventListener('touchstart', reveal);
+    window.removeEventListener('pointerdown', reveal);
+  };
+  window.addEventListener('scroll', reveal, { passive: true });
+  window.addEventListener('touchstart', reveal, { passive: true });
+  window.addEventListener('pointerdown', reveal, { passive: true });
+})();
+
+(function () {
   // Projects catalog filtering (no-op on pages without filters)
   var filters = document.querySelectorAll('.proj-filter');
   if (!filters.length) return;
