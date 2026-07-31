@@ -56,11 +56,11 @@ const ENV_URL = 'textures/studio.exr';
 
 // Tuning constants, kept together so the "refined, not the focal point"
 // feel is easy to nudge without hunting through the render loop below.
-const IDLE_TURN_DEG = 5; // peak-to-peak yaw — a slow, subtle "shaking head no"
+const IDLE_TURN_DEG = 7; // peak-to-peak yaw — a slow "shaking head no"
 const IDLE_TURN_SPEED = 0.16; // cycles/sec — slow, gentle
-const POINTER_TILT_MAX = 0.11; // radians (~6°) — a slight turn toward the cursor, not a dramatic one
+const POINTER_TILT_MAX = 0.17; // radians (~9.7°) — turns further to "look" toward the cursor
 const POINTER_DAMPING = 4; // higher = settles faster, lower = floatier
-const SCROLL_TILT_DOWN_DEG = 4; // forward nod on scroll — even subtler than the cursor tilt above
+const SCROLL_TILT_DOWN_DEG = 6; // forward nod on scroll — still subtler than the cursor turn above
 const MODEL_TARGET_SIZE = 3.4; // world units the logo's on-screen (X/Y) size is normalized to
 
 // Base orientation fix, in degrees, applied once after centering/scaling.
@@ -71,7 +71,7 @@ const MODEL_TARGET_SIZE = 3.4; // world units the logo's on-screen (X/Y) size is
 // to face the camera, matching assets/hero-r-poster.png. If it now faces
 // away from the camera (you're looking at its back) flip this to -90; if
 // it's on its side, try X: 0, Y: 90 instead.
-const MODEL_ROTATION_OFFSET_DEG = { x: 90, y: 0, z: 0 };
+const MODEL_ROTATION_OFFSET_DEG = { x: 93, y: 0, z: 0 };
 
 /** Feature-detects a usable WebGL context before we spend anything on setup. */
 function isWebGLAvailable() {
