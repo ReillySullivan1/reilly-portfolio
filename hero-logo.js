@@ -14,17 +14,23 @@
 // nod each own a single transform without fighting one another:
 //
 //   scrollGroup <- GSAP ScrollTrigger drives a small forward/downward nod on scroll (rotation.x)
-//     tiltGroup <- damped pointer position drives a slight east/west turn (rotation.y)
-//       idleGroup <- perpetual gentle side-to-side sway (position.x)
+//     tiltGroup <- damped pointer position drives a slight east/west turn toward the cursor (rotation.y)
+//       idleGroup <- perpetual slow "shaking head no" yaw (rotation.y)
 //         gltfScene (the loaded logo mesh, centered + normalized on load)
 //
+// The idle turn and the cursor turn are both rotation.y, just on two
+// different, independently-animated groups — they simply add together
+// (idle provides a small autonomous east/west drift even before the
+// cursor moves; the cursor turn layers on top of wherever idle currently
+// is).
+//
 // This is the 3D chrome logo as the *only* hero art now. It intentionally
-// does NOT include a continuous spin: rotating a real-time chrome material
-// through a full turn sweeps its reflections across the entire HDRI and
-// makes them shift/break up in a way a single baked poster image never has
-// to deal with. The sway, cursor tilt, and scroll tilt are all small-angle/
-// small-distance motions, so the reflections stay stable — this is meant to
-// read as refined and slightly alive, not as the page's focal point
+// does NOT include a continuous 360° spin: rotating a real-time chrome
+// material through a full turn sweeps its reflections across the entire
+// HDRI and makes them shift/break up in a way a single baked poster image
+// never has to deal with. The idle turn, cursor turn, and scroll nod are
+// all small-angle motions, so the reflections stay stable — this is meant
+// to read as refined and slightly alive, not as the page's focal point
 // (recruiters are here to look at the project case studies below it).
 //
 // Fallback strategy
@@ -50,8 +56,8 @@ const ENV_URL = 'textures/studio.exr';
 
 // Tuning constants, kept together so the "refined, not the focal point"
 // feel is easy to nudge without hunting through the render loop below.
-const IDLE_SHIFT_WIDTH = 0.1; // world units, peak-to-peak horizontal sway
-const IDLE_SHIFT_SPEED = 0.24; // cycles/sec — slow, gentle
+const IDLE_TURN_DEG = 5; // peak-to-peak yaw — a slow, subtle "shaking head no"
+const IDLE_TURN_SPEED = 0.16; // cycles/sec — slow, gentle
 const POINTER_TILT_MAX = 0.11; // radians (~6°) — a slight turn toward the cursor, not a dramatic one
 const POINTER_DAMPING = 4; // higher = settles faster, lower = floatier
 const SCROLL_TILT_DOWN_DEG = 4; // forward nod on scroll — even subtler than the cursor tilt above
@@ -116,7 +122,7 @@ async function loadEnvironment(renderer) {
 
 /**
  * Loads the logo GLB, recenters it on its own bounding-box middle (so it
- * sways/tilts around its visual center regardless of how the origin was
+ * turns/tilts around its visual center regardless of how the origin was
  * set in Blender), normalizes its scale, applies the Blender-export
  * orientation fix, and upgrades every mesh to a polished-chrome
  * MeshPhysicalMaterial driven by the HDRI environment map.
@@ -143,9 +149,9 @@ async function loadLogo(envMap) {
 
   // Normalize by the larger of the model's front-facing (X/Y) dimensions —
   // not a rotation-proof bounding sphere. That conservative sizing made
-  // sense when the model spun through arbitrary angles (idle spin, pointer
-  // tilt); now that the only motion is a small sway and an even smaller
-  // scroll tilt, the model can safely fill the frame the way the flat
+  // sense when the model spun through arbitrary angles (a full continuous
+  // spin); now that every motion (idle turn, cursor turn, scroll nod) is a
+  // small angle, the model can safely fill the frame the way the flat
   // poster art did, with just a little headroom for that small motion.
   const size = box.getSize(new THREE.Vector3());
   const frameDimension = Math.max(size.x, size.y) || 1;
@@ -188,8 +194,8 @@ async function loadLogo(envMap) {
       clearcoat: 0.4,
       clearcoatRoughness: 0.25,
       // Double-sided so no backface gaps show through thin extruded
-      // sections as the logo sways/tilts (a single static angle can hide a
-      // gap that a different one reveals).
+      // sections as the logo turns (a single static angle can hide a gap
+      // that a different one reveals).
       side: THREE.DoubleSide,
     });
   });
@@ -371,7 +377,7 @@ async function init() {
     const dt = Math.min(clock.getDelta(), 1 / 30); // clamp long pauses (tab switches, etc.)
     const t = clock.elapsedTime;
 
-    idleGroup.position.x = Math.sin(t * IDLE_SHIFT_SPEED * Math.PI * 2) * (IDLE_SHIFT_WIDTH / 2);
+    idleGroup.rotation.y = Math.sin(t * IDLE_TURN_SPEED * Math.PI * 2) * THREE.MathUtils.degToRad(IDLE_TURN_DEG / 2);
     pointerTilt.update(tiltGroup, dt);
 
     renderer.render(scene, camera);
