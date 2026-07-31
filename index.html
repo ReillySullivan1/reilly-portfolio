@@ -10,6 +10,20 @@
 <link rel="icon" type="image/png" href="assets/favicon.png" />
 <link rel="apple-touch-icon" href="assets/favicon.png" />
 <link rel="stylesheet" href="styles.css" />
+
+<!-- 3D hero logo dependencies (native ES modules, no bundler/build step) -->
+<link rel="preconnect" href="https://unpkg.com" crossorigin />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.185.1/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.185.1/examples/jsm/",
+    "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.15.0/+esm",
+    "gsap/ScrollTrigger": "https://cdn.jsdelivr.net/npm/gsap@3.15.0/ScrollTrigger.js/+esm"
+  }
+}
+</script>
 </head>
 <body>
 
@@ -35,6 +49,13 @@
           width="398" height="432"
           alt="Animated liquid-metal R monogram"
           decoding="async" />
+        <!--
+          Progressive-enhancement layer: a 3D chrome RS logo rendered by
+          hero-logo.js. It fades in on top of the art above only once
+          WebGL is confirmed available, motion is allowed, and both the
+          model and HDRI have loaded successfully — see hero-logo.js.
+        -->
+        <canvas class="hero-canvas" aria-hidden="true"></canvas>
       </div>
       <div class="hero-text reveal">
         <span class="name">Reilly Sullivan</span>
@@ -141,5 +162,6 @@
   </footer>
 
   <script src="app.js" defer></script>
+  <script type="module" src="hero-logo.js"></script>
 </body>
 </html>
