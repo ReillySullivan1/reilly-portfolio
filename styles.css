@@ -106,15 +106,34 @@ a { color: inherit; text-decoration: none; }
   position: relative;       /* anchors the 3D canvas overlay below */
   aspect-ratio: 398 / 432;  /* reserves space so nothing jumps once the canvas sizes itself */
 }
+/* Soft grounding shadow beneath the logo — an easy, cheap depth cue (no 3D
+   cost) that keeps it from reading as if it's just floating on nothing. */
+.hero-art::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 6%;
+  width: 62%;
+  height: 12%;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(20, 20, 20, 0.24) 0%, rgba(20, 20, 20, 0) 72%);
+  filter: blur(10px);
+  pointer-events: none;
+}
+/* The 2D poster/WebP is hidden by default — the 3D canvas below is the
+   primary hero art now. hero-logo.js only reveals this (via
+   .is-fallback-visible) if WebGL is unavailable or the model/HDRI fail to
+   load; prefers-reduced-motion reveals it unconditionally further down. */
 .hero-art img {
   width: 100%;
   height: auto;
+  display: none;
+}
+.hero-art img.is-fallback-visible {
   display: block;
 }
 
-/* 3D chrome logo (hero-logo.js): cross-fades in on top of .hero-r once
-   the model + HDRI are loaded. Stays invisible/inert otherwise, leaving
-   the WebP/poster fallback above as the only thing the visitor sees. */
+/* 3D chrome logo (hero-logo.js): fades in once the model + HDRI are loaded. */
 .hero-canvas {
   position: absolute;
   inset: 0;
@@ -127,7 +146,8 @@ a { color: inherit; text-decoration: none; }
 .hero-canvas.is-ready { opacity: 1; }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-canvas { display: none; } /* never mounted for reduced-motion visitors either (see hero-logo.js) */
+  .hero-canvas { display: none; } /* 3D scene never mounts for reduced-motion visitors (see hero-logo.js) */
+  .hero-art img { display: block; } /* ...so the static/animated 2D art takes over instead */
 }
 .hero-text {
   display: flex;
