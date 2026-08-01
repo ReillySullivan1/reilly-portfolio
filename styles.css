@@ -420,23 +420,23 @@ footer {
   .bio-text { max-width: none; }
   .edu-skills { grid-template-columns: 1fr; }
 
-  /* Nav pill starts hidden and reveals on the visitor's first scroll (see
-     app.js). visibility (not display) keeps its layout space reserved, so
-     nothing shifts when it fades in, and keeps it out of the tab order
-     while hidden. */
-  .nav-shell {
+  /* Homepage-only: nav pill starts faded out and reveals on the visitor's
+     first scroll/touch (see app.js). Opacity only (no visibility:hidden) —
+     hiding it from hit-testing meant a first tap landing on a nav link only
+     revealed the pill instead of following the link, forcing a second tap.
+     Leaving it hit-testable while faded lets that same first tap register
+     as a real click. */
+  .nav-shell--reveal {
     opacity: 0;
-    visibility: hidden;
     transition: opacity .35s ease;
   }
-  .nav-shell.is-visible {
+  .nav-shell--reveal.is-visible {
     opacity: 1;
-    visibility: visible;
   }
 }
 
 @media (max-width: 860px) and (prefers-reduced-motion: reduce) {
-  .nav-shell { transition: none; }
+  .nav-shell--reveal { transition: none; }
 }
 
 @media (max-width: 560px) {
