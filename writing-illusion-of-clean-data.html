@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<title>The Illusion of Clean Data — Reilly Sullivan</title>
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://reillysullivandesign.com/writing-illusion-of-clean-data.html" />
+<meta property="og:title" content="The Illusion of Clean Data — Reilly Sullivan" />
+<meta property="og:description" content="What a 326-item pet insurance dropdown reveals about the limits of alphabetical order." />
+<meta property="og:image" content="https://reillysullivandesign.com/assets/favicon.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="The Illusion of Clean Data — Reilly Sullivan" />
+<meta name="twitter:description" content="What a 326-item pet insurance dropdown reveals about the limits of alphabetical order." />
+<meta name="twitter:image" content="https://reillysullivandesign.com/assets/favicon.png" />
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="nav-shell">
+    <div class="wrap">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="index.html">Reilly Sullivan <span class="year">Portfolio 2026</span></a>
+        <div class="nav-links">
+          <a href="projects.html">Projects</a>
+          <a href="resume.html">About</a>
+          <a href="assets/ReillySullivan_UXUIResume_2026.pdf" target="_blank" rel="noopener">Resume</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap post-hero reveal" aria-label="Article introduction">
+      <p class="post-eyebrow">Research Notes / Form Design</p>
+      <h1 class="post-title">The Illusion of Clean Data</h1>
+      <p class="post-subtitle">What a 326-item pet insurance dropdown reveals about the limits of alphabetical order.</p>
+      <div class="cs-meta">
+        <div>
+          <p class="cs-meta-label">Format</p>
+          <p class="cs-meta-value">Independent research essay</p>
+        </div>
+        <div>
+          <p class="cs-meta-label">Method</p>
+          <p class="cs-meta-value">Heuristic audit, comparative UX pattern review</p>
+        </div>
+        <div>
+          <p class="cs-meta-label">Reading time</p>
+          <p class="cs-meta-value">7 minutes</p>
+        </div>
+      </div>
+    </section>
+
+    <article class="wrap post-article">
+
+      <p class="cs-text post-lede">Nielsen Norman Group has long argued that dropdown lists are one of the most overused patterns in form design &mdash; convenient for the designer, often costly for the user. I wanted to test that claim against a real, high-stakes form: an ASPCA pet insurance claim, where the dropdown in question isn't picking a shipping state. It's asking a worried, non-medical pet owner to correctly self-diagnose their animal from a wall of alphabetized conditions before they can even submit a claim.</p>
+
+      <section class="post-chapter reveal" aria-labelledby="ch01-h">
+        <div class="post-chapter-head">
+          <span class="post-chapter-num">01</span>
+          <h2 class="cs-h" id="ch01-h">The Claim Form</h2>
+        </div>
+        <p class="cs-text">The "condition" field on the ASPCA claim form lists <b>326 total conditions</b>, sorted strictly A&ndash;Z &mdash; including at least <b>8 outright duplicate entries</b>. For a field this long, alphabetical order isn't neutral. It's a sequencing choice that only works if the user already knows the correct word for what's wrong with their pet.</p>
+        <p class="cs-text">Most people filing a claim aren't veterinarians. They know their dog is vomiting, or scratching, or limping &mdash; not that the billing code they need is filed under "G" for Gastroenteritis rather than "D" for Dietary Indiscretion. The form assumes clinical vocabulary the user doesn't have, then punishes them with 300+ rows for not having it.</p>
+      </section>
+
+      <section class="post-chapter reveal" aria-labelledby="ch02-h">
+        <div class="post-chapter-head">
+          <span class="post-chapter-num">02</span>
+          <h2 class="cs-h" id="ch02-h">Same Diagnosis, Different Name</h2>
+        </div>
+        <p class="cs-text">Scattered across the alphabet &mdash; never adjacent, never cross-referenced &mdash; are pairs of entries that describe the same or overlapping condition. Because the list only sorts by spelling, a user scanning for one will likely never see the other.</p>
+
+        <div class="pair-card">
+          <span class="pair-tag">Same exam, two rows</span>
+          <div class="pair-field">
+            <div class="pair-label">Row 94</div>
+            <div class="pair-value">Bladder Infection / Cystitis</div>
+          </div>
+          <div class="pair-vs">vs.</div>
+          <div class="pair-field">
+            <div class="pair-label">Row 312</div>
+            <div class="pair-value">Urinary Tract Infection</div>
+          </div>
+          <p class="pair-note">Both routinely describe the same presenting symptoms at the vet. A pet owner reading two discharge papers with different wording has no way to know these aren't distinct claim categories &mdash; they're 218 alphabetical rows apart.</p>
+        </div>
+
+        <div class="pair-card">
+          <span class="pair-tag">Cause vs. symptom</span>
+          <div class="pair-field">
+            <div class="pair-label">Row 121 &amp; 122</div>
+            <div class="pair-value">Gastroenteritis / Gastritis</div>
+          </div>
+          <div class="pair-vs">vs.</div>
+          <div class="pair-field">
+            <div class="pair-label">Row 74</div>
+            <div class="pair-value">Dietary Indiscretion</div>
+          </div>
+          <p class="pair-note">Both describe stomach inflammation &mdash; dietary indiscretion is usually the <em>cause</em>, gastroenteritis the resulting diagnosis. The form presents them as three unrelated, competing options with no indication one often produces the other.</p>
+        </div>
+      </section>
+
+      <section class="post-chapter reveal" aria-labelledby="ch03-h">
+        <div class="post-chapter-head">
+          <span class="post-chapter-num">03</span>
+          <h2 class="cs-h" id="ch03-h">Feel It Yourself</h2>
+        </div>
+
+        <div class="demo-card">
+          <span class="demo-badge">Try it</span>
+          <p class="demo-instructions">Same scenario, three patterns: a dog that <b>won't stop scratching and has a hot, irritated patch of skin</b>. You don't know the clinical term is "Hot Spot." Try each tab and notice where you get stuck.</p>
+
+          <div class="demo-tabs">
+            <button class="demo-tab active" data-panel="panel-native"><span class="tabnum">01</span>As Shipped</button>
+            <button class="demo-tab" data-panel="panel-search"><span class="tabnum">02</span>Search</button>
+            <button class="demo-tab" data-panel="panel-guided"><span class="tabnum">03</span>Guided Triage</button>
+          </div>
+
+          <div class="demo-panel active" id="panel-native">
+            <div class="demo-col single-col">
+              <div class="demo-col-label"><span>Native dropdown</span><span class="tag">326 rows, A&ndash;Z</span></div>
+              <select class="condition-select" id="nativeSelect" size="10"></select>
+              <div class="demo-stat" id="nativeStat">Scroll through all <b id="nativeCount">0</b> entries. No hint that "Hot Spot" is filed under H, not S for "scratching."</div>
+            </div>
+          </div>
+
+          <div class="demo-panel" id="panel-search">
+            <div class="demo-col single-col">
+              <div class="demo-col-label"><span>Filterable combobox</span><span class="tag">Synonym-tagged search</span></div>
+              <div class="combo-box">
+                <input class="combo-input" id="comboInput" type="text" placeholder="Type a symptom or condition&hellip;" autocomplete="off">
+                <div class="combo-list" id="comboList"></div>
+              </div>
+              <div class="demo-stat" id="comboStat">Works well once you type a word the index recognizes &mdash; still assumes you'll guess a matching word on the first try.</div>
+            </div>
+          </div>
+
+          <div class="demo-panel" id="panel-guided">
+            <div class="triage-step-label" id="triageStepLabel">Step 1 &mdash; Where is the issue?</div>
+            <div class="chip-grid" id="triageChips"></div>
+            <button class="triage-back" id="triageBack">&larr; Change category</button>
+            <div class="triage-step-label" id="triageResultsLabel" style="display:none;">Step 2 &mdash; Which of these matches best?</div>
+            <div class="triage-results" id="triageResults"></div>
+            <div class="demo-stat" id="triageStat">No vocabulary required to start &mdash; the first question is about location, not diagnosis.</div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="post-chapter reveal" aria-labelledby="ch04-h">
+        <div class="post-chapter-head">
+          <span class="post-chapter-num">04</span>
+          <h2 class="cs-h" id="ch04-h">Three Ways This Fails</h2>
+        </div>
+        <p class="cs-text">NN/g's research on long dropdowns describes what users do when the option they're looking for isn't where they expect it. All three show up in claim-form behavior, just with insurance-specific consequences.</p>
+        <ul class="failure-list">
+          <li>
+            <span class="fnum">01</span>
+            <div>
+              <h3>Exhaustive review</h3>
+              <p>The user reads all 326 rows top to bottom, comparing near-duplicates by hand, to make sure they haven't missed the "right" one &mdash; turning a 30-second field into a multi-minute diagnostic exercise.</p>
+            </div>
+          </li>
+          <li>
+            <span class="fnum">02</span>
+            <div>
+              <h3>Settle for close enough</h3>
+              <p>They pick the nearest-sounding term. If it's the wrong billing category, the claim can be flagged, under-reimbursed, or kicked back for correction &mdash; a delay entirely manufactured by the form, not the medical facts.</p>
+            </div>
+          </li>
+          <li>
+            <span class="fnum">03</span>
+            <div>
+              <h3>Abandon the field</h3>
+              <p>They leave it blank and call the vet's office or ASPCA support to ask which category applies &mdash; converting a self-serve digital claim into a phone call, for both the pet owner and the support team.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="post-chapter reveal" aria-labelledby="ch05-h">
+        <div class="post-chapter-head">
+          <span class="post-chapter-num">05</span>
+          <h2 class="cs-h" id="ch05-h">When the List Itself Is the Problem</h2>
+        </div>
+        <p class="cs-text">None of this means dropdowns are wrong. It means the pattern only fits certain conditions, and the ASPCA form picked the wrong one. Mapping list size against how familiar the user already is with the exact wording gives a clearer picture of what actually belongs where.</p>
+
+        <div class="matrix">
+          <div class="corner"></div>
+          <div class="colhead">Small list</div>
+          <div class="colhead">Large list</div>
+
+          <div class="rowhead">Familiar wording</div>
+          <div class="cell">
+            <h4>Classic dropdown</h4>
+            <p>Finite, known options. Browsing the full list is itself useful &mdash; it can surface offerings the user didn't know existed.</p>
+            <span class="ex">e.g. Hy-Line Cruises' destination list</span>
+          </div>
+          <div class="cell">
+            <h4>Text field or light combobox</h4>
+            <p>The user already knows exactly what they'll type. Typing is faster than scrolling, and autocomplete just speeds confirmation.</p>
+            <span class="ex">e.g. booking travel, entering an address</span>
+          </div>
+
+          <div class="rowhead">Unfamiliar wording</div>
+          <div class="cell">
+            <h4>Dropdown + plain-language help</h4>
+            <p>Short enough to scan, but options still need a definition or example the user can match against, not just a label.</p>
+            <span class="ex">e.g. saved payment method, language selector</span>
+          </div>
+          <div class="cell">
+            <h4>Guided triage, search as shortcut</h4>
+            <p>Recall is the failure point, not scroll length. Branch on a plain-language category first, then show a short list &mdash; keep search available for the minority who already know the term.</p>
+            <span class="ex">e.g. pet insurance claim conditions</span>
+          </div>
+        </div>
+
+        <div class="callout-row">
+          <div class="callout">
+            <div class="clabel">On duplicate meaning</div>
+            <p>A combobox alone doesn't fix synonym pairs like cystitis/UTI. Those need to be merged into one searchable entry before the interaction layer can help &mdash; the content problem has to be solved first.</p>
+          </div>
+          <div class="callout">
+            <div class="clabel">On hidden variants</div>
+            <p>The same logic applies to apparel sizing: showing what's in stock <em>before</em> the size is picked (not after "add to cart") removes a failure mode this form shares &mdash; discovering the real answer too late.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-chapter reveal" aria-labelledby="ch06-h">
+        <div class="post-chapter-head">
+          <span class="post-chapter-num">06</span>
+          <h2 class="cs-h" id="ch06-h">A Different Form for ASPCA</h2>
+        </div>
+        <p class="cs-text">The fix isn't a redesign of the whole claims flow &mdash; it's a re-sequencing of one field, in this order:</p>
+        <p class="cs-text"><b>Lead with guided triage, not a list.</b> Ask where the issue is &mdash; digestive, skin &amp; coat, mobility, breathing, and so on &mdash; before showing any conditions at all. This is recognition over recall: the user isn't generating a diagnosis from memory, they're picking from a handful of visible, plain-language buckets. It also caps the list they eventually see at 10&ndash;20 items instead of 326.</p>
+        <p class="cs-text"><b>Offer search as a shortcut, not the default.</b> Owners who already know the clinical term shouldn't be forced through two clicks to get there. A synonym-tagged combobox stays available as an explicit "search directly" option alongside the guided flow &mdash; it just isn't the first thing everyone sees.</p>
+        <p class="cs-text"><b>Merge the duplicates at the data layer.</b> Collapsing 8 synonym pairs into single entries with alternate terms attached (so "cystitis," "bladder infection," and "UTI" all resolve to one row) has to happen regardless of which interaction pattern sits on top of it.</p>
+        <p class="cs-text"><b>Always leave a manual fallback.</b> "Not sure &mdash; describe it and we'll categorize it" stays visible throughout, for the cases neither triage nor search resolves. Logged descriptions become the backlog for expanding the taxonomy over time.</p>
+        <p class="cs-text post-footnote">A free-text box that matches natural language directly to a condition is worth building eventually &mdash; but as a layer added on top of guided triage, not a replacement for it. Symptom-checker tools that rely on free text alone tend to follow it with structured clarifying questions before committing to a category, for the same reason: an unscaffolded guess carries more risk here than in a typical product search bar, because a wrong match can misroute a real claim.</p>
+        <blockquote class="cs-quote">The goal isn't a shorter list. It's a sequence that never asks the user for a word they don't have.</blockquote>
+      </section>
+
+      <p class="cs-text post-lede post-outro">This one field is a small piece of a much larger claims experience &mdash; but it's a clean example of how a pattern that works fine at 12 items can quietly become a support-ticket generator at 326.</p>
+
+    </article>
+
+    <section class="wrap post-signoff reveal" aria-label="Closing note">
+      <p class="cs-text">If you're working on a form with a list problem like this one &mdash; long, ambiguous, or both &mdash; I'd like to hear about it.</p>
+      <p class="post-sign">&mdash; Reilly</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p class="connect-eyebrow">Let's Connect</p>
+      <p class="connect-email">Reilly@ReillySullivanDesign</p>
+      <a class="contact-btn" href="mailto:Reilly@ReillySullivanDesign">Contact Me</a>
+
+      <hr class="footer-rule" />
+
+      <div class="footer-bottom">
+        <img class="footer-star" src="assets/footer-logo.png" width="120" height="120" alt="Reilly Sullivan logo" />
+        <div class="footer-nav">
+          <a href="projects.html">Projects</a>
+          <a href="resume.html">About</a>
+          <a href="assets/ReillySullivan_UXUIResume_2026.pdf" target="_blank" rel="noopener">Resume</a>
+        </div>
+        <a class="footer-linkedin" href="https://www.linkedin.com/in/reilly-sullivan-91a044123/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+  <script src="writing-illusion-of-clean-data.js" defer></script>
+</body>
+</html>
