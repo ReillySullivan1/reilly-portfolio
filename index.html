@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Security headers set via meta tag since GitHub Pages doesn't allow custom
+     HTTP response headers. script-src stays strict (no 'unsafe-inline') — the
+     one inline script on this page (the importmap below) is allowlisted by
+     exact SHA-256 hash instead, so injected/tampered inline scripts still
+     can't run. style-src needs 'unsafe-inline' because of the many inline
+     style="" attributes used for per-image aspect-ratio across the case
+     study pages; that's a much lower-severity relaxation than allowing it
+     for scripts, since CSS injection can't execute arbitrary code. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com https://cdn.jsdelivr.net 'sha256-wE0M9mYE+Dc34NRVXcPjQarc/QzRaLkOVuFo9wwrExQ='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
 <title>Reilly Sullivan — Portfolio 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
