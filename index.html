@@ -13,18 +13,18 @@
      for scripts, since CSS injection can't execute arbitrary code. -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com https://cdn.jsdelivr.net 'sha256-wE0M9mYE+Dc34NRVXcPjQarc/QzRaLkOVuFo9wwrExQ='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'" />
 <meta name="referrer" content="strict-origin-when-cross-origin" />
-<title>Reilly Sullivan — Portfolio 2026</title>
+<title>Reilly Sullivan - Portfolio 2026</title>
 <!-- Open Graph / Twitter Card: without these, link-preview crawlers (e.g.
      iMessage) fall back to auto-screenshotting the page instead of showing
      a compact icon + title. -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://reillysullivandesign.com/" />
 <meta property="og:title" content="Reilly Sullivan Portfolio 2026" />
-<meta property="og:description" content="UX/UI design portfolio — case studies in research-driven product and brand design." />
+<meta property="og:description" content="UX/UI design portfolio: case studies in research-driven product and brand design." />
 <meta property="og:image" content="https://reillysullivandesign.com/assets/favicon.png" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Reilly Sullivan Portfolio 2026" />
-<meta name="twitter:description" content="UX/UI design portfolio — case studies in research-driven product and brand design." />
+<meta name="twitter:description" content="UX/UI design portfolio: case studies in research-driven product and brand design." />
 <meta name="twitter:image" content="https://reillysullivandesign.com/assets/favicon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -91,7 +91,23 @@
 
     <section id="projects" class="wrap" aria-label="Case studies">
       <h2 class="section-label reveal">Projects</h2>
-      <div class="case-grid">
+      <div class="case-grid" style="padding-bottom:0">
+        <article class="case reveal">
+          <a class="case-link" href="work-dots.html">
+            <div class="case-thumb" data-thumb="dots">
+              <img src="assets/dots-launch-mockup.webp" width="900" height="800" loading="lazy" alt="Dots social memory aid launch screen on a phone mockup" />
+              <span class="case-badge">Case Study</span>
+            </div>
+            <h2 class="case-title">Dots Social Memory Aid</h2>
+            <div class="case-tags">
+              <span class="case-tag">Concept Sprint</span>
+              <span class="case-tag">UX / UI Design</span>
+              <span class="case-tag">Mobile Design</span>
+            </div>
+            <p class="case-body">A 2-day concept sprint for a mobile app that indexes people the way memory actually works: by color and story, not an alphabetical contact card.</p>
+          </a>
+        </article>
+
         <article class="case reveal">
           <a class="case-link" href="work-transportation.html">
             <div class="case-thumb" data-thumb="transportation">
@@ -104,7 +120,23 @@
               <span class="case-tag">Mobile-first</span>
               <span class="case-tag">Usability Testing</span>
             </div>
-            <p class="case-body">A generative research study into why booking a ferry felt harder than it should &mdash; redesigning the mobile experience around a fixed third-party reservation system.</p>
+            <p class="case-body">A generative research study into why booking a ferry felt harder than it should, redesigning the mobile experience around a fixed third-party reservation system.</p>
+          </a>
+        </article>
+
+        <article class="case reveal">
+          <a class="case-link" href="writing-illusion-of-clean-data.html">
+            <div class="case-thumb" data-thumb="essay">
+              <img src="assets/thumb-dropdown-essay.webp" width="900" height="800" loading="lazy" alt="The Illusion of Clean Data essay shown as a demo tab and comparison card" />
+              <span class="case-badge">Essay</span>
+            </div>
+            <h2 class="case-title">The Illusion of Clean Data</h2>
+            <div class="case-tags">
+              <span class="case-tag">UX Research</span>
+              <span class="case-tag">Form Design</span>
+              <span class="case-tag">Heuristic Audit</span>
+            </div>
+            <p class="case-body">What a 326-item pet insurance dropdown reveals about the limits of alphabetical order, with an interactive demo comparing native dropdown, search, and guided triage.</p>
           </a>
         </article>
 
@@ -123,68 +155,10 @@
             <p class="case-body">Transforming the SDC nonprofit website with a modern, responsive design that guides users toward key goals: making donations, finding volunteer opportunities, and accessing pet health resources through one streamlined experience.</p>
           </a>
         </article>
+      </div>
 
-        <article class="case reveal">
-          <a class="case-link" href="work-omakase.html">
-            <div class="case-thumb" data-thumb="omakase">
-              <img src="assets/thumb-omakase.webp" width="900" height="800" loading="lazy" alt="Omakase Art Collective site shown on three phone screens" />
-              <span class="case-badge">Case Study</span>
-            </div>
-            <h2 class="case-title">Omakase Art Collective</h2>
-            <div class="case-tags">
-              <span class="case-tag">E-commerce</span>
-              <span class="case-tag">UX / UI Design</span>
-              <span class="case-tag">Brand Development</span>
-            </div>
-            <p class="case-body">Transforming Omakase Art Collective's brand design and digital presence with refined brand identity, sophisticated UI/UX design, and robust web development. Including silent bidding extension for live events.</p>
-          </a>
-        </article>
-
-        <article class="case reveal">
-          <a class="case-link" href="work-usfws.html">
-            <div class="case-thumb" data-thumb="usfws">
-              <img src="assets/thumb-usfws.webp" width="900" height="800" loading="lazy" alt="U.S. Fish &amp; Wildlife Service site shown on three phone screens" />
-              <span class="case-badge">Case Study</span>
-            </div>
-            <h2 class="case-title">U.S. Fish &amp; Wildlife Service</h2>
-            <div class="case-tags">
-              <span class="case-tag">Web Development</span>
-              <span class="case-tag">UX / UI Design</span>
-              <span class="case-tag">Govt. Website</span>
-            </div>
-            <p class="case-body">Enhancing USFWS digital presence with a clean modern aesthetic and an easy to navigate web flow.</p>
-          </a>
-        </article>
-
-        <article class="case reveal">
-          <a class="case-link" href="writing-illusion-of-clean-data.html">
-            <div class="case-thumb" data-thumb="essay">
-              <img src="assets/Thumbnail-dropdown-essay.svg" width="450" height="400" loading="lazy" alt="The Illusion of Clean Data essay shown as a demo tab and comparison card" />
-              <span class="case-badge">Essay</span>
-            </div>
-            <h2 class="case-title">The Illusion of Clean Data</h2>
-            <div class="case-tags">
-              <span class="case-tag">UX Research</span>
-              <span class="case-tag">Form Design</span>
-              <span class="case-tag">Heuristic Audit</span>
-            </div>
-            <p class="case-body">What a 326-item pet insurance dropdown reveals about the limits of alphabetical order &mdash; with an interactive demo comparing native dropdown, search, and guided triage.</p>
-          </a>
-        </article>
-
-        <article class="case reveal">
-          <div class="case-thumb" data-thumb="coffee">
-            <img src="assets/thumb-coffee.webp" width="450" height="400" loading="lazy" alt="Groundbreaking Coffee site shown on desktop and phone" />
-            <span class="case-badge case-badge--status">Coming Soon</span>
-          </div>
-          <h2 class="case-title">Groundbreaking Coffee</h2>
-          <div class="case-tags">
-            <span class="case-tag">Food and Beverage</span>
-            <span class="case-tag">Web Development</span>
-            <span class="case-tag">Brand Development</span>
-          </div>
-          <p class="case-body">Creating a seamless online experience that combines the warmth of the great outdoors with intuitive ordering, streamlined navigation, and modern convenience.</p>
-        </article>
+      <div class="view-all-wrap reveal">
+        <a class="view-all-btn" href="projects.html">View All Projects</a>
       </div>
     </section>
   </main>

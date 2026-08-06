@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<title>Dots Social Memory Aid - Reilly Sullivan</title>
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://reillysullivandesign.com/work-dots.html" />
+<meta property="og:title" content="Dots Social Memory Aid - Reilly Sullivan" />
+<meta property="og:description" content="A 2-day design sprint concept: a mobile social memory aid that indexes people the way memory actually works." />
+<meta property="og:image" content="https://reillysullivandesign.com/assets/favicon.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Dots Social Memory Aid - Reilly Sullivan" />
+<meta name="twitter:description" content="A 2-day design sprint concept: a mobile social memory aid that indexes people the way memory actually works." />
+<meta name="twitter:image" content="https://reillysullivandesign.com/assets/favicon.png" />
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="nav-shell nav-shell--float">
+    <div class="wrap">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="index.html">Reilly Sullivan <span class="year">Portfolio 2026</span></a>
+        <div class="nav-links">
+          <a href="projects.html" aria-current="page">Projects</a>
+          <a href="resume.html">About</a>
+          <a href="assets/ReillySullivan_UXUIResume_2026.pdf" target="_blank" rel="noopener">Resume</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="wrap cs-top" aria-label="Project overview">
+      <div class="cs-hero-media reveal">
+        <img src="assets/dots-project-hero.webp" width="2880" height="2086" loading="lazy" alt="Dots app shown across four screens: the launch dial, onboarding, voice capture, and a trivia recall moment">
+      </div>
+
+      <div class="cs-overview">
+        <div class="cs-head reveal">
+          <h1 class="cs-title">Dots Social Memory Aid</h1>
+          <span class="cs-subtitle">Concept Case Study · Mobile App Design</span>
+        </div>
+
+        <div class="cs-overview-details">
+          <div class="cs-meta">
+            <div>
+              <p class="cs-meta-label">Role</p>
+              <p class="cs-meta-value">Product Designer &amp; Brand Strategist (End-to-End)</p>
+            </div>
+            <div>
+              <p class="cs-meta-label">Time</p>
+              <p class="cs-meta-value">2-Day Sprint</p>
+            </div>
+            <div>
+              <p class="cs-meta-label">Type</p>
+              <p class="cs-meta-value">Mobile Application</p>
+            </div>
+          </div>
+
+          <div class="cs-intro reveal">
+            <p>Dots is a social memory aid for anyone from a nine-year-old learning their cousin's world to a grandparent keeping up with a family that keeps growing. Capture a person in seconds after you meet them. Get them back the moment you need them.</p>
+            <p style="color:var(--muted);font-size:13px;line-height:1.6;margin:0">Scope: Product Strategy, UX Architecture, UI/Visual Design, Brand Identity, Cognitive Interaction Design</p>
+            <p style="color:var(--muted);font-size:13px;line-height:1.6;margin-top:8px">Deliverables: Concept Definition, Ecosystem Architecture, Dynamic Color System, Wireframes, High-Fidelity Interactive Mockups</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pull quote -->
+    <section class="wrap cs-section reveal" aria-label="Framing">
+      <div class="cs-split">
+        <div class="cs-split-media">
+          <div class="cs-figure" style="aspect-ratio:900/1000"><img src="assets/dots-launch-mockup.webp" loading="lazy" alt="Dots launch screen on a single phone mockup"></div>
+        </div>
+        <div class="cs-split-text">
+          <blockquote class="cs-quote" style="margin:0">"We meet dozens of important people every week. Our brains aren't built to hold every name, story, and detail: forgetting doesn't mean you don't care, it means you're human."</blockquote>
+          <p class="cs-text" style="margin-top:20px">Dots bridges the gap between caring about someone and actually remembering their story.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="wrap cs-section reveal" aria-labelledby="problem-h">
+      <div class="cs-split">
+        <div class="cs-split-text">
+          <h2 class="cs-h" id="problem-h">Problem</h2>
+          <p class="cs-text">Forgetting isn't a character flaw: it's a memory-architecture problem. The same friction repeats across every part of life: a small, human detail slips before it's needed again.</p>
+          <div class="cs-annot-list" style="margin-top:24px">
+            <div>
+              <p class="cs-annot-label">Capture is too slow</p>
+              <p class="cs-text">By the time you'd open a contact card and pick fields, the moment, and the detail, is gone.</p>
+            </div>
+            <div>
+              <p class="cs-annot-label">Recall is the wrong shape</p>
+              <p class="cs-text">Contacts are indexed by name. Humans index by story: the BBQ, the trade, the favor offered.</p>
+            </div>
+            <div>
+              <p class="cs-annot-label">The cost is social</p>
+              <p class="cs-text">Forgetting isn't neutral. It reads as "you don't matter": to a coworker, a niece, a neighbor.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cs-split-media">
+          <div class="cs-figure" style="aspect-ratio:728/856;width:auto;height:clamp(280px,34vw,420px);margin:0 auto"><img src="assets/dots-problem-examples.webp" loading="lazy" alt="Example capture cards: Devon the doorman, Marco at the coffee shop, and a cousin's toddler"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insight -->
+    <section class="wrap cs-section reveal" aria-labelledby="insight-h">
+      <h2 class="cs-h" id="insight-h">Insight</h2>
+      <h3 class="cs-h cs-h--sm">Color categorizes faster than reading does.</h3>
+      <p class="cs-text" style="margin-top:16px">Dual-coding theory says a visual channel and a verbal channel together beat either alone. So every dot in Dots carries both: a color token your visual cortex sorts in milliseconds, and a plain-language line you read only if you need it.</p>
+      <p class="cs-text" style="margin-top:16px">The practical payoff: you pre-filter a network of 300 people before you've read a single name.</p>
+
+      <div class="insight-legend" style="margin-top:24px" role="list" aria-label="Relationship color legend">
+        <div class="insight-card" role="listitem">
+          <div class="insight-card-head"><span class="insight-card-dot" style="background:#34a853"></span><p class="insight-card-label">Family</p></div>
+          <p class="insight-card-desc">Parents, siblings, cousins and everyone attached to them, kids and pets included.</p>
+        </div>
+        <div class="insight-card" role="listitem">
+          <div class="insight-card-head"><span class="insight-card-dot" style="background:#17abd6"></span><p class="insight-card-label">Work</p></div>
+          <p class="insight-card-desc">Coworkers, leadership, the front desk, and the conference contact you'll email next week.</p>
+        </div>
+        <div class="insight-card" role="listitem">
+          <div class="insight-card-head"><span class="insight-card-dot" style="background:#e0357d"></span><p class="insight-card-label">Friends</p></div>
+          <p class="insight-card-desc">School, childhood, and the ever-expanding ring of friends-of-friends.</p>
+        </div>
+        <div class="insight-card" role="listitem">
+          <div class="insight-card-head"><span class="insight-card-dot" style="background:#f2a33d"></span><p class="insight-card-label">Community</p></div>
+          <p class="insight-card-desc">Neighbours, the barista, the dog park, the run club. The people you see weekly.</p>
+        </div>
+        <div class="insight-card" role="listitem">
+          <div class="insight-card-head"><span class="insight-card-dot" style="background:#8f6fe0"></span><p class="insight-card-label">Partner</p></div>
+          <p class="insight-card-desc">Your partner's side: in-laws, their siblings, and the names you're expected to know.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How Dots Works -->
+    <section class="wrap cs-section reveal" aria-labelledby="how-h">
+      <h2 class="cs-h" id="how-h">How Dots Works</h2>
+
+      <div class="cs-flow">
+        <div class="cs-flow-stage">
+          <p class="cs-flow-eyebrow" style="color:#e23f8c">01 · Capture</p>
+          <h3 class="cs-flow-heading">Say it, or type it</h3>
+          <p class="cs-text">Ten seconds of speech in the driveway, or the same parser from the keyboard, for a quiet room.</p>
+          <div class="cs-figure" style="aspect-ratio:390/844"><img src="assets/dots-wireframe-voice-capture.webp" loading="lazy" alt="Voice capture screen"></div>
+        </div>
+
+        <div class="cs-flow-stage">
+          <p class="cs-flow-eyebrow" style="color:#2fa84f">02 · Map</p>
+          <h3 class="cs-flow-heading">See the whole web</h3>
+          <p class="cs-text">A radial orbit: you at the centre, one hub per colour, every dot hung off whoever introduced them.</p>
+          <div class="cs-figure" style="aspect-ratio:390/844"><img src="assets/dots-wireframe-map.webp" loading="lazy" alt="Map screen"></div>
+        </div>
+
+        <div class="cs-flow-stage">
+          <p class="cs-flow-eyebrow" style="color:#1fb6c9">03 · Ask</p>
+          <h3 class="cs-flow-heading">Search by the story</h3>
+          <p class="cs-text">"The guy at Alex's BBQ who does landscaping" is a valid query.</p>
+          <div class="cs-figure" style="aspect-ratio:390/844"><img src="assets/dots-wireframe-ask.webp" loading="lazy" alt="Ask Dots screen"></div>
+        </div>
+
+        <div class="cs-flow-stage">
+          <p class="cs-flow-eyebrow" style="color:#e2903c">04 · Arrive</p>
+          <h3 class="cs-flow-heading">Walk in prepared</h3>
+          <p class="cs-text">Before an event, Dots surfaces who'll be there and what you last talked about.</p>
+          <div class="cs-figure" style="aspect-ratio:390/844"><img src="assets/dots-wireframe-profile.webp" loading="lazy" alt="Profile screen"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inclusive Interface -->
+    <section class="wrap cs-section reveal" aria-labelledby="inclusive-h">
+      <h2 class="cs-h" id="inclusive-h">Inclusive Interface</h2>
+      <p class="cs-text">Toggle these: the card on the right responds.</p>
+
+      <div class="cs-split" style="margin-top:24px;align-items:start">
+        <div class="dots-a11y-controls">
+          <div class="dots-a11y-control-group">
+            <p class="cs-meta-label">Text size</p>
+            <div class="dots-a11y-segmented" data-group="size">
+              <button class="dots-a11y-seg-btn is-active" type="button" data-size="default">Default</button>
+              <button class="dots-a11y-seg-btn" type="button" data-size="large">Large</button>
+              <button class="dots-a11y-seg-btn" type="button" data-size="largest">Largest</button>
+            </div>
+          </div>
+
+          <div class="dots-a11y-control-group">
+            <p class="cs-meta-label">Colourblind-safe shapes</p>
+            <button class="dots-a11y-toggle" type="button" id="dotsA11yShapeToggle" aria-pressed="false">Shapes off</button>
+          </div>
+
+          <p class="cs-text" style="margin-top:20px">Colour is never the only signal. Each category also owns a shape: circle, square, diamond, triangle, hexagon, so the dot system survives deuteranopia and a dim screen alike.</p>
+
+          <div style="margin-top:24px">
+            <p class="cs-meta-label">Also in the spec</p>
+            <p class="cs-text">44px minimum targets everywhere · every colour pair clears 4.5:1 on the warm neutral · full VoiceOver labels that read "Ray Ocampo, Friends" not "pink dot" · no timed interactions, ever.</p>
+          </div>
+        </div>
+
+        <div class="dots-a11y-preview">
+          <p class="cs-meta-label">Live Preview</p>
+          <div class="dots-a11y-list" id="dotsA11yList" data-size="default">
+            <div class="dots-a11y-row" data-person="friends">
+              <span class="dots-a11y-cue dots-a11y-cue--circle" style="background:#e0357d"></span>
+              <div>
+                <p class="dots-a11y-name">Ray Ocampo</p>
+                <p class="dots-a11y-detail">Friends · landscaper, met at Alex's BBQ</p>
+              </div>
+            </div>
+            <div class="dots-a11y-row" data-person="family">
+              <span class="dots-a11y-cue dots-a11y-cue--circle" style="background:#34a853"></span>
+              <div>
+                <p class="dots-a11y-name">Tommy Mulligan</p>
+                <p class="dots-a11y-detail">Family · your cousin Sarah's second kid</p>
+              </div>
+            </div>
+            <div class="dots-a11y-row" data-person="work">
+              <span class="dots-a11y-cue dots-a11y-cue--circle" style="background:#17abd6"></span>
+              <div>
+                <p class="dots-a11y-name">Priya Raman</p>
+                <p class="dots-a11y-detail">Work · your boss, twins named Ida and Om</p>
+              </div>
+            </div>
+            <div class="dots-a11y-row" data-person="community">
+              <span class="dots-a11y-cue dots-a11y-cue--circle" style="background:#f2a33d"></span>
+              <div>
+                <p class="dots-a11y-name">Marcus at the desk</p>
+                <p class="dots-a11y-detail">Community · doorman since 2011</p>
+              </div>
+            </div>
+            <div class="dots-a11y-row" data-person="partner">
+              <span class="dots-a11y-cue dots-a11y-cue--circle" style="background:#8f6fe0"></span>
+              <div>
+                <p class="dots-a11y-name">Dana Whitlock</p>
+                <p class="dots-a11y-detail">Partner · Mara's Aunt, lives in CT</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wireframes -->
+    <section class="wrap cs-section reveal" aria-labelledby="wireframes-h">
+      <h2 class="cs-h" id="wireframes-h">Wireframes</h2>
+      <p class="cs-text">Every screen from the sprint, in sequence.</p>
+
+      <div class="cs-wireframe-grid" style="margin-top:24px">
+        <div>
+          <div class="cs-figure" style="aspect-ratio:390/844"><img src="assets/dots-wireframe-launch.webp" loading="lazy" alt="Launch screen"></div>
+          <p class="cs-flow-caption">Launch: the whole idea in one frame.</p>
+        </div>
+        <div>
+          <div class="cs-figure" style="aspect-ratio:390/844"><img src="assets/dots-wireframe-onboarding.webp" loading="lazy" alt="Onboarding screen"></div>
+          <p class="cs-flow-caption">Onboarding: one dot, then you're in.</p>
+        </div>
+        <div>
+          <div class="cs-figure" style="aspect-ratio:390/844"><img src="assets/dots-wireframe-voice-capture.webp" loading="lazy" alt="Voice capture screen"></div>
+          <p class="cs-flow-caption">Capture by voice: say it, done.</p>
+        </div>
+        <div>
+          <div class="cs-figure" style="aspect-ratio:390/844"><img src="assets/dots-wireframe-capture-by-type.webp" loading="lazy" alt="Typed capture screen"></div>
+          <p class="cs-flow-caption">Capture by typing: the quiet option.</p>
+        </div>
+        <div>
+          <div class="cs-figure" style="aspect-ratio:390/844"><img src="assets/dots-wireframe-map.webp" loading="lazy" alt="Map screen"></div>
+          <p class="cs-flow-caption">Map: your whole world, pre-filtered.</p>
+        </div>
+        <div>
+          <div class="cs-figure" style="aspect-ratio:390/844"><img src="assets/dots-wireframe-ask.webp" loading="lazy" alt="Ask Dots screen"></div>
+          <p class="cs-flow-caption">Ask Dots: search the way you remember.</p>
+        </div>
+        <div>
+          <div class="cs-figure" style="aspect-ratio:390/844"><img src="assets/dots-wireframe-profile.webp" loading="lazy" alt="Profile screen"></div>
+          <p class="cs-flow-caption">Profile: the details, not the data.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Next steps -->
+    <section class="wrap cs-section reveal" aria-labelledby="next-h">
+      <h2 class="cs-h" id="next-h">Next Steps</h2>
+      <p class="cs-text">What this 48-hour sprint didn't have time to prove, and what would need to be true before it ships.</p>
+
+      <div class="next-group">
+        <span class="next-group-badge">Immediate</span>
+        <div class="next-items">
+          <div class="next-item">
+            <h3 class="next-item-title">Stress-test at scale</h3>
+            <p class="next-item-question">Does the radial map still read at real family scale?</p>
+            <p class="next-item-body">Every screen so far shows 3–5 dots. The open question is whether it holds at 300+ dots across four generations, or needs clustering or a search-first fallback once a category gets crowded. Untested: the single biggest assumption in the concept.</p>
+          </div>
+          <div class="next-item">
+            <h3 class="next-item-title">Validate voice-capture accuracy</h3>
+            <p class="next-item-question">Can "speak plainly" actually be parsed reliably?</p>
+            <p class="next-item-body">The product hinges on turning a spoken description into name, category, and detail. Next step: a Wizard-of-Oz test: record 10–15 people describing someone they just met, and manually check how reliably that split comes out. If accuracy is shaky, capture needs a confirm-before-save step not yet designed.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="next-group">
+        <span class="next-group-badge next-group-badge--soft">Near-term</span>
+        <div class="next-items">
+          <div class="next-item">
+            <h3 class="next-item-title">Design the empty state</h3>
+            <p class="next-item-question">How does the value land before a single dot exists?</p>
+            <p class="next-item-body">Every screen here assumes data already exists. The real first-run experience (zero dots, zero contacts) is where the value proposition either lands or doesn't.</p>
+          </div>
+          <div class="next-item">
+            <h3 class="next-item-title">Design for work, explicitly</h3>
+            <p class="next-item-question">Does the same color-and-story model hold up under different social stakes?</p>
+            <p class="next-item-body">The sprint scoped workplace relationships as one category of five. A standalone flow for professional networking would test whether the same model holds up directly, rather than staying implied.</p>
+          </div>
+          <div class="next-item">
+            <h3 class="next-item-title">Make privacy the headline, not the footnote</h3>
+            <p class="next-item-question">Would someone trust this with a boss's or in-law's details?</p>
+            <p class="next-item-body">"Nothing left your phone" and "answered on device" are strong signals currently buried in small captions. People will hesitate to voice-log details about someone they don't fully trust the app with. That needs to be stated up front, not implied.</p>
+          </div>
+          <div class="next-item">
+            <h3 class="next-item-title">Make "details, not data" a stated promise</h3>
+            <p class="next-item-question">What's actually stored, where, and how would someone find out?</p>
+            <p class="next-item-body">Right now it's a tone, not a policy. Before this ships, it needs a plain-language answer: no selling, no ad targeting, no training external models on someone's family details, deletion that's actually instant and complete. A broken trust claim is worse than no claim at all.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Next Project -->
+    <section class="wrap cs-section reveal" aria-label="Next project">
+      <p class="cs-meta-label">Next Project</p>
+      <a class="case-link cs-next-project" href="work-transportation.html">
+        <div class="case-thumb">
+          <img src="assets/thumb-transportation.webp" width="900" height="732" loading="lazy" alt="Ferry booking redesign shown on phone screens" />
+        </div>
+        <h2 class="case-title">Ferry Ticket Booking: End-to-End Redesign</h2>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p class="connect-eyebrow">Let's Connect</p>
+      <p class="connect-email">Reilly@ReillySullivanDesign.com</p>
+      <a class="contact-btn" href="mailto:Reilly@ReillySullivanDesign.com">Contact Me</a>
+
+      <hr class="footer-rule" />
+
+      <div class="footer-bottom">
+        <img class="footer-star" src="assets/footer-logo.png" width="120" height="120" alt="Reilly Sullivan logo" />
+        <div class="footer-nav">
+          <a href="projects.html">Projects</a>
+          <a href="resume.html">About</a>
+          <a href="assets/ReillySullivan_UXUIResume_2026.pdf" target="_blank" rel="noopener">Resume</a>
+        </div>
+        <a class="footer-linkedin" href="https://www.linkedin.com/in/reilly-sullivan-91a044123/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+  <script src="work-dots.js" defer></script>
+</body>
+</html>

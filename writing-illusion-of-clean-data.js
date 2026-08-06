@@ -26,7 +26,7 @@
     if(matches.length === 0){
       const div = document.createElement('div');
       div.className = 'combo-empty';
-      div.textContent = 'No matches — try a symptom in plain words.';
+      div.textContent = 'No matches. Try a symptom in plain words.';
       comboList.appendChild(div);
     } else {
       matches.slice(0,60).forEach(c=>{
@@ -42,7 +42,7 @@
     }
     comboStat.innerHTML = q.length
       ? '<b>' + matches.length + '</b> of ' + conditions.length + ' entries match "' + query + '"'
-      : 'Matches update as you type — symptoms and formal terms both resolve.';
+      : 'Matches update as you type. Symptoms and formal terms both resolve.';
   }
   renderCombo('');
   comboInput.addEventListener('input', (e)=> renderCombo(e.target.value));
@@ -90,7 +90,7 @@
     chipEl.classList.add('selected');
     triageBack.classList.add('show');
     triageResultsLabel.style.display = 'block';
-    triageStepLabel.textContent = 'Step 1 — Where is the issue?';
+    triageStepLabel.textContent = 'Step 1: Where is the issue?';
     triageResults.innerHTML = '';
     categories[cat].forEach(c=>{
       const row = document.createElement('div');
@@ -98,7 +98,7 @@
       row.addEventListener('click', ()=>{
         document.querySelectorAll('#triageResults div').forEach(d=>d.classList.remove('picked'));
         row.classList.add('picked');
-        triageStat.innerHTML = 'Selected: <b>' + c + '</b> — reached in 2 taps, no clinical vocabulary required.';
+        triageStat.innerHTML = 'Selected: <b>' + c + '</b>, reached in 2 taps, no clinical vocabulary required.';
       });
       triageResults.appendChild(row);
     });
