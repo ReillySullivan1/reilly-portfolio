@@ -504,10 +504,85 @@ footer {
   .nav-shell--reveal { transition: none; }
 }
 
+/* Mobile menu button (shown only at <=560px, and only once app.js adds .has-toggle) */
+.nav-toggle { display: none; }
+
 @media (max-width: 560px) {
+  /* Fallback without JS: stacked pill with links visible */
   .nav { flex-direction: column; align-items: center; gap: 14px; border-radius: 28px; }
   .nav-links { gap: 20px; }
   .brand .year { display: inline; }
+
+  /* With JS: name left, menu button right, links in a dropdown panel */
+  .nav.has-toggle {
+    position: relative;
+    z-index: 30;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 999px;
+    padding: 6px 6px 6px 18px;
+  }
+  .nav.has-toggle .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 18px;
+    height: 1.5px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform .25s ease, opacity .2s ease;
+  }
+  .nav.is-open .nav-toggle span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
+  .nav.is-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  .nav.is-open .nav-toggle span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+
+  .nav.has-toggle .nav-links {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 8px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity .2s ease, transform .2s ease, visibility 0s linear .2s;
+  }
+  .nav.has-toggle.is-open .nav-links {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: opacity .2s ease, transform .2s ease, visibility 0s;
+  }
+  .nav.has-toggle .nav-links a { display: block; width: 100%; padding: 12px 0; }
+  .nav.has-toggle .nav-links a + a { border-top: 1px solid var(--border); }
+  .nav.has-toggle .nav-links a::after { display: none; }
+}
+
+@media (max-width: 560px) and (prefers-reduced-motion: reduce) {
+  .nav-toggle span, .nav.has-toggle .nav-links { transition: none; }
 }
 
 /* ===================================================================

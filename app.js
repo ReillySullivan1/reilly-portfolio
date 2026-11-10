@@ -64,3 +64,32 @@
     });
   });
 })();
+
+(function () {
+  // Mobile nav: hamburger toggles the links panel (styles at <=560px in styles.css).
+  // .has-toggle is added here so the links stay visible if JS doesn't run.
+  var nav = document.querySelector('.nav');
+  var btn = nav && nav.querySelector('.nav-toggle');
+  if (!btn) return;
+  nav.classList.add('has-toggle');
+  var setOpen = function (open) {
+    nav.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  };
+  btn.addEventListener('click', function () { setOpen(!nav.classList.contains('is-open')); });
+  nav.querySelectorAll('.nav-links a').forEach(function (a) {
+    a.addEventListener('click', function () { setOpen(false); });
+  });
+  // pointerdown in the capture phase, so elements that swallow taps
+  // (e.g. the homepage hero canvas) still close the menu.
+  document.addEventListener('pointerdown', function (e) {
+    if (nav.classList.contains('is-open') && !nav.contains(e.target)) setOpen(false);
+  }, true);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('is-open')) { setOpen(false); btn.focus(); }
+  });
+  window.matchMedia('(min-width: 561px)').addEventListener('change', function (m) {
+    if (m.matches) setOpen(false);
+  });
+})();
